@@ -73,47 +73,6 @@ screenshot_2024-12-17_14-30-00.png
 - **Interval**: You can adjust the `time.sleep()` value in the script to change the time between each screenshot.
 - **Browser**: You can modify the script to use a different browser, like Firefox, by changing the WebDriver initialization.
 
-## Example Code
-
-Here’s the core script to take automated screenshots:
-
-```python
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-import time
-from datetime import datetime
-
-# Set up the WebDriver
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-
-# URL to capture screenshots
-url = "https://www.example.com"
-
-# Open the webpage
-driver.get(url)
-
-# Capture screenshots at regular intervals
-for i in range(5):
-    # Capture screenshot
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    driver.save_screenshot(f"screenshot_{timestamp}.png")
-    print(f"Screenshot {i+1} saved!")
-    time.sleep(10)  # Wait for 10 seconds before taking the next screenshot
-
-# Close the driver
-driver.quit()
-```
-
-### Example Output:
-
-```
-Screenshot 1 saved!
-Screenshot 2 saved!
-Screenshot 3 saved!
-Screenshot 4 saved!
-Screenshot 5 saved!
-```
 
 ## Contributing
 
@@ -123,9 +82,5 @@ Screenshot 5 saved!
 4. Commit your changes (`git commit -am 'Add new feature'`).
 5. Push to the branch (`git push origin feature-name`).
 6. Create a new Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
